@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R3gistration Form</title>
+</head>
+<body> 
+    <hr><hr>
+    <strong>
+    <h2 style="text-align:center">Registration form</h2><hr><hr></strong>
+    <form name=""myForm>
+        <fieldset id="g" >
+            <h4 id="hh">User personal information</h4><br><br>
+            <label >Enter your full name</label><br>
+            <input type="text" name="name"><br>
+            <label >Enter your email</label><br>
+            <input type="email" name="email" required><br>
+            <label >Enter your password</label><br>
+            <input type="password" name="pass"><br>
+            <label>confirm your password</label><br>
+            <input type="password" name="pass1"><br>
+            <br><label>Enter your gender</label><br>
+            <input type="radio" id="gender" name="gender" value="male" />Male <br>
+            <input type="radio" id="gender" name="gender" value="female" />Female <br />
+            <input type="radio" id="gender" name="gender" value="others" />others <br />
+            <br>Enter your Address:<br>
+            <textarea></textarea><br>  
+            <input type="submit" value="sign-up">
+        </fieldset>
+    </form>
+
+</body>
+<style>
+   #g{
+    text-align: center;
+    text-shadow: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border-width: 100px;
+    border-color: black;
+   } 
+   body{
+    background-color:darkgoldenrod;
+   }
+   #hh{
+    border-style: double;
+    border-color: brown;
+    align-items: center;
+    text-align: center;
+    border-width:10px;
+
+   }
+</style>
+<script type="text/javascript">
+
+        function validateEmail() {
+            var emailID = document.myForm.email.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+
+            if (atpos < 1 || (dotpos - atpos < 2)) {
+                alert("Please enter correct email ID")
+                document.myForm.EMail.focus();
+                return false;
+            }
+            return (true);
+        }
+        
+        function matchpass() {
+                var firstpassword = document.myForm.pass.value;
+                var secondpassword = document.myyForm.pass1.value;
+
+                if (firstpassword == secondpassword) {
+                    return true;
+                }
+                else {
+                    alert("password must be same!");
+                    return false;
+                }
+            }  
+</script>
+</html>
